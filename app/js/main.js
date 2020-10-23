@@ -88,7 +88,6 @@ var ts = new TwoStep({
   narrative: [
       function(event) {
         $('.chart-title').text('Percent of people 25-54 who are employed');
-        $('.highcharts-color-0').css("stroke", "#9a9fa0");
         chart.removeAnnotation(annotation2);
         chart.addAnnotation(annotation1),
         chart.update({
@@ -108,8 +107,6 @@ var ts = new TwoStep({
         chart.removeAnnotation('e-p-anno');
         chart.addAnnotation(annotation2);
         $('.chart-title').text('Percent of men and women employed');
-        $('.highcharts-series-0').css('stroke', 'yellow')
-        // $('.highcharts-series-1').addClass('purple-main')
         chart.update({
             chart: {
                 type: 'line'

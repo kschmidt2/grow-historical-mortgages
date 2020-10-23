@@ -126,6 +126,19 @@ var ts = new TwoStep({
       },
       function(event) {
         chart.removeAnnotation('e-p-anno');
+        $('.chart-title').text('Percent change in labor force participation since February');
+        chart.update({
+            chart: {
+                type: 'line'
+            },
+            data: {
+                csvURL: 'https://raw.githubusercontent.com/kschmidt2/grow-womens-recession-intro/master/app/data/lfl-gender.csv'
+            },
+            yAxis: {
+                min: -8,
+                max: 2
+            }
+        });
       }
   ],
   offset: {

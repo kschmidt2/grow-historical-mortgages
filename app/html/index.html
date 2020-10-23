@@ -8,15 +8,36 @@
   <title>Graphic preview</title>
 
   <!--build:css css/styles.min.css-->
-  <link rel="stylesheet" href="css/grow-highcharts-template_styles.css">
+  <link rel="stylesheet" href="css/womens-recession-intro_styles.css">
   <!--endbuild-->
 
 </head>
 
 <body>
 
-  <div class="chart-area">
-      <div class="chart-head" id="chart-head">This is a headline</div>
+  <div class="chart-area-womens-recession-intro">
+    <div class="parent">
+      <div class="narrative">
+        <div class="narrative-item">
+          Between February and April, about 3 in 20 working Americans lost their jobs. The percentage of the prime working-age population, those aged 24-54, who are employed fell 11 percentage points from its highest level in 20 years to under 70%, a level not seen since the 1970s.
+        </div>
+        <div class="narrative-item">
+          For the first time, women are experiencing significantly greater job losses than men during a recession. In September, there were 8% fewer women working than there were in February, compared to 6.2% fewer men. 
+        </div>
+        <div class="narrative-item">
+          This disparity is especially stark for parents who have children at home. Mothers have experienced a greater drop in employment than fathers.
+        </div>
+        <div class="narrative-item">
+          Some of these women are still looking for work, with the female unemployment rate sitting at 8%. But many are not: more than 2.6 million women have left the labor force since February.
+        </div>
+      </div>
+      <div class="sticky-outer">
+        <div class="chart-title">Percent of people 25-54 who are employed</div>
+        <div class="chart" id="chart-container-intro"></div>
+      </div>
+  </div>
+
+      <!-- <div class="chart-head" id="chart-head">This is a headline</div>
       <div class="chart-subhead">This is a subdeck or chart title. In some cases, there might be a need for a chart title also.</div>
       <div class="chart-title">This is a chart title</div>
       <div class="chart-title-social">Social chart title</div>
@@ -27,16 +48,18 @@
         <span class="chart-source">this is the source</span>
       </div>
       <img src="https://fm-static.cnbc.com/awsmedia/chart/2019/6/10/grow_logo.1562793450037.png" class="grow-logo">
-      <img src="https://fm-static.cnbc.com/awsmedia/chart/2019/6/25/grow_logo_transparent-08.1564071637122.png" class="grow-logo-social">
+      <img src="https://fm-static.cnbc.com/awsmedia/chart/2019/6/25/grow_logo_transparent-08.1564071637122.png" class="grow-logo-social"> -->
   </div>
-  <div id="chart-fallback"></div>
-    
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/noframework.waypoints.min.js"></script>
+  <script src="//code.jquery.com/jquery-latest.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/fixto/0.5.0/fixto.min.js"></script>  
   <script src="https://code.highcharts.com/highcharts.js"></script>
   <script src="https://code.highcharts.com/modules/data.js"></script>
-  <!-- <script src="http://code.highcharts.com/modules/exporting.js"></script> -->
+  <script src="http://code.highcharts.com/modules/annotations.js"></script>
   <!-- <script src="https://code.highcharts.com/highcharts-more.js"></script> -->
   <!--build:js js/main.min.js -->
-  <script src="js/grow-highcharts-template_main.js"></script>
+  <script src="js/womens-recession-intro_main.js"></script>
   <!-- endbuild -->
 </body>
 </html>

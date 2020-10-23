@@ -57,8 +57,10 @@ let annotation1 = {
 };
 
 let annotation2 = {
+    id: 'gender-anno',
     labels: [{
         text: 'Men',
+        className: 'men-primary',
         point: {
             x: Date.UTC(2019, 1, 1),
             y: 66,
@@ -67,13 +69,63 @@ let annotation2 = {
         }
     },{
         text: 'Women',
+        className: 'women-primary',
         point: {
             x: Date.UTC(2019, 1, 1),
             y: 55,
             xAxis: 0,
             yAxis: 0
         } 
-    }]
+    }],
+}
+
+let annotation3 = {
+    id: 'parent-anno',
+    // labels: [{
+    //     text: 'Men',
+    //     className: 'men-primary',
+    //     point: {
+    //         x: Date.UTC(2019, 1, 1),
+    //         y: 66,
+    //         xAxis: 0,
+    //         yAxis: 0
+    //     }
+    // },{
+    //     text: 'Women',
+    //     className: 'women-primary',
+    //     point: {
+    //         x: Date.UTC(2019, 1, 1),
+    //         y: 55,
+    //         xAxis: 0,
+    //         yAxis: 0
+    //     } 
+    // }]
+}
+
+let annotation4 = {
+    id: 'lfp-anno',
+    labels: [{
+        text: 'Men',
+        className: 'men-primary',
+        point: {
+            x: Date.UTC(2020, 7, 1),
+            y: -2.35,
+            xAxis: 0,
+            yAxis: 0
+        }
+    },{
+        text: 'Women',
+        className: 'women-primary',
+        point: {
+            x: Date.UTC(2020, 7, 1),
+            y:-4.25,
+            xAxis: 0,
+            yAxis: 0
+        } 
+    }],
+    animation: {
+        duration: 2000
+    }
 }
 
 $( ".chart-area-womens-recession-intro" ).parent().css( "overflow", "visible" )
@@ -88,8 +140,10 @@ var ts = new TwoStep({
   narrative: [
       function(event) {
         $('.chart-title').text('Percent of people 25-54 who are employed');
-        chart.removeAnnotation(annotation2);
-        chart.addAnnotation(annotation1),
+        chart.removeAnnotation('gender-anno');
+        chart.removeAnnotation('parent-anno');
+        chart.removeAnnotation('lfp-anno');
+        setTimeout(function(){chart.addAnnotation(annotation1)},1000),
         chart.update({
             chart: {
                 type: 'area'
@@ -104,9 +158,11 @@ var ts = new TwoStep({
         });
       },
       function(event) {
+        chart.removeAnnotation('parent-anno');
+        chart.removeAnnotation('lfp-anno');
         chart.removeAnnotation('e-p-anno');
-        chart.addAnnotation(annotation2);
-        $('.chart-title').text('Percent of men and women employed');
+        setTimeout(function(){chart.addAnnotation(annotation2)},2000),
+        $('.chart-title').text('Percent of people who are employed');
         chart.update({
             chart: {
                 type: 'line'
@@ -122,11 +178,19 @@ var ts = new TwoStep({
         // chart.updateFromData();
       },
       function(event) {
+        chart.removeAnnotation('gender-anno');
         chart.removeAnnotation('e-p-anno');
+        chart.removeAnnotation('lfp-anno');
+        setTimeout(function(){chart.addAnnotation(annotation3)},2000),
+        $('.chart-title').text('Percent of people who are employed');
       },
       function(event) {
+        chart.removeAnnotation('gender-anno');
+        chart.removeAnnotation('parent-anno');
         chart.removeAnnotation('e-p-anno');
-        $('.chart-title').text('Percent change in labor force participation since February');
+        setTimeout(function(){chart.addAnnotation(annotation4)},2000),
+        $('.highcharts-grid-line:nth-child(5)').css('stroke', 'black');
+        $('.chart-title').text('Change in labor force participation since February');
         chart.update({
             chart: {
                 type: 'line'
@@ -153,6 +217,9 @@ Highcharts.setOptions({
       thousandsSep: ','
     }
 });
+
+
+
 
 
 
@@ -186,6 +253,10 @@ function drawHighcharts() {
         // for line charts only
         plotOptions: {
             series: {
+                animation: {
+                    duration: 1000,
+                    defer: 1000
+                },
                 lineWidth: 1,
                 states: {
                     hover: {
@@ -242,7 +313,10 @@ function drawHighcharts() {
             },
             min: 60,
             max: 85,
-            tickAmount: 6
+            tickAmount: 6,
+            // width: 0,
+            tickLength: 25,
+            tickPosition: 'inside'
             // adds commas to thousands
             // formatter: function () {
             //     return Highcharts.numberFormat(this.value,0,'.',',');

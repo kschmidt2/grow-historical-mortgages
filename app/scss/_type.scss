@@ -22,6 +22,9 @@ $font-stack: 'Avenir', 'Avenir Next', 'Arial', sans-serif;
     // bottom margin should be 30px if there is no legend
     margin-bottom: 10px;
     color: $slate-secondary-4;
+    @include x-small {
+        max-width: 225px;
+    }
 }
 
 .chart-note {

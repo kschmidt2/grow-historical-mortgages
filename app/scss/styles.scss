@@ -136,14 +136,54 @@ $breakpoint-lg: 717px;
     }
   }
 
-  .purple-main {
-    stroke: $purple-primary;
-    fill: $purple-primary;
-  }
-  .yellow-main {
-    stroke: $yellow-secondary-4;
+  .men-primary {
     fill: $yellow-secondary-4;
+    font-size: 16px;
+    font-weight: 600;
   }
+  .women-primary {
+    fill: $purple-primary;
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  .highcharts-grid-line {
+    &:first-child, &:last-child {
+      stroke-width: 0;
+    }
+  }
+
+  .highcharts-annotation {
+    animation: fadeIn ease 1s;
+-webkit-animation: fadeIn ease 1s;
+-moz-animation: fadeIn ease 1s;
+-o-animation: fadeIn ease 1s;
+-ms-animation: fadeIn ease 1s;
+  }
+  @keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+    }
+    
+    @-moz-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+    }
+    
+    @-webkit-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+    }
+    
+    @-o-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+    }
+    
+    @-ms-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+    }
   
 }
 

@@ -84,6 +84,7 @@
     fill: $slate-secondary-5;
     // use this to change the axis label
     & span:last-child {
+      transform: translate(10px,0) !important;
       &:after {
         content: "%";
     }
@@ -209,23 +210,23 @@
   }
   
   .highcharts-color-1 {
-    fill: $slate-secondary-3;
-    stroke: $slate-secondary-3;
-  }
-  
-  .highcharts-color-2 {
     fill: $purple-primary;
     stroke: $purple-primary;
   }
   
+  .highcharts-color-2 {
+    fill: $slate-secondary-4;
+    stroke: $slate-secondary-4;
+  }
+  
   .highcharts-color-3 {
-    fill: $yellow-primary;
-    stroke: $yellow-primary;
+    fill: $slate-secondary-4;
+    stroke: $slate-secondary-4;
   }
   
   .highcharts-color-4 {
-    fill: $blue-primary;
-    stroke: $blue-primary;
+    fill: $slate-secondary-4;
+    stroke: $slate-secondary-4;
   }
   
   // .highcharts-color-5 {

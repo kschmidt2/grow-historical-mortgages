@@ -60,18 +60,20 @@ let annotation2 = {
     id: 'gender-anno',
     labels: [{
         text: 'Men',
+        align: 'left',
         className: 'men-primary',
         point: {
-            x: Date.UTC(2019, 1, 1),
+            x: Date.UTC(2019, 0, 1),
             y: 66,
             xAxis: 0,
             yAxis: 0
         }
     },{
         text: 'Women',
+        align: 'left',
         className: 'women-primary',
         point: {
-            x: Date.UTC(2019, 1, 1),
+            x: Date.UTC(2019, 0, 1),
             y: 55,
             xAxis: 0,
             yAxis: 0
@@ -81,25 +83,60 @@ let annotation2 = {
 
 let annotation3 = {
     id: 'parent-anno',
-    // labels: [{
-    //     text: 'Men',
-    //     className: 'men-primary',
-    //     point: {
-    //         x: Date.UTC(2019, 1, 1),
-    //         y: 66,
-    //         xAxis: 0,
-    //         yAxis: 0
-    //     }
-    // },{
-    //     text: 'Women',
-    //     className: 'women-primary',
-    //     point: {
-    //         x: Date.UTC(2019, 1, 1),
-    //         y: 55,
-    //         xAxis: 0,
-    //         yAxis: 0
-    //     } 
-    // }]
+    labelOptions: {
+        backgroundColor: 'white'
+    },
+    labels: [{
+        text: 'Fathers',
+        align: 'left',
+        className: 'men-primary',
+        point: {
+            x: Date.UTC(2019, 0, 1),
+            y: 91,
+            xAxis: 0,
+            yAxis: 0
+        }
+    },{
+        text: 'Mothers',
+        align: 'left',
+        className: 'women-primary',
+        point: {
+            x: Date.UTC(2019, 0, 1),
+            y: 77.5,
+            xAxis: 0,
+            yAxis: 0
+        } 
+    },{
+        text: 'Youngest child aged 13-17',
+        align: 'left',
+        className: 'women-secondary-1',
+        point: {
+            x: Date.UTC(2019, 0, 1),
+            y: 74.5,
+            xAxis: 0,
+            yAxis: 0
+        } 
+    },{
+        text: 'Aged 5-12',
+        align: 'left',
+        className: 'women-secondary-2',
+        point: {
+            x: Date.UTC(2019, 0, 1),
+            y: 67.5,
+            xAxis: 0,
+            yAxis: 0
+        } 
+    },{
+        text: 'Under 5',
+        align: 'left',
+        className: 'women-secondary-3',
+        point: {
+            x: Date.UTC(2019, 0, 1),
+            y: 61.5,
+            xAxis: 0,
+            yAxis: 0
+        } 
+    }]
 }
 
 let annotation4 = {
@@ -140,10 +177,11 @@ var ts = new TwoStep({
   narrative: [
       function(event) {
         $('.chart-title').text('Percent of people 25-54 who are employed');
+        $('.chart-source').text('Federal Reserve Bank of St. Louis');
         chart.removeAnnotation('gender-anno');
         chart.removeAnnotation('parent-anno');
         chart.removeAnnotation('lfp-anno');
-        setTimeout(function(){chart.addAnnotation(annotation1)},1000),
+        setTimeout(function(){chart.addAnnotation(annotation1)},500),
         chart.update({
             chart: {
                 type: 'area'
@@ -161,8 +199,9 @@ var ts = new TwoStep({
         chart.removeAnnotation('parent-anno');
         chart.removeAnnotation('lfp-anno');
         chart.removeAnnotation('e-p-anno');
-        setTimeout(function(){chart.addAnnotation(annotation2)},2000),
+        setTimeout(function(){chart.addAnnotation(annotation2)},500),
         $('.chart-title').text('Percent of people who are employed');
+        $('.chart-source').text('Federal Reserve Bank of St. Louis');
         chart.update({
             chart: {
                 type: 'line'
@@ -181,16 +220,30 @@ var ts = new TwoStep({
         chart.removeAnnotation('gender-anno');
         chart.removeAnnotation('e-p-anno');
         chart.removeAnnotation('lfp-anno');
-        setTimeout(function(){chart.addAnnotation(annotation3)},2000),
+        setTimeout(function(){chart.addAnnotation(annotation3)},500),
         $('.chart-title').text('Percent of people who are employed');
+        $('.chart-source').text('Current Population Survey via IPUMS');
+        chart.update({
+            chart: {
+                type: 'line'
+            },
+            data: {
+                csvURL: 'https://raw.githubusercontent.com/kschmidt2/grow-womens-recession-intro/master/app/data/e-p-parents.csv'
+            },
+            yAxis: {
+                min: 50,
+                max: 100
+            },
+        });
       },
       function(event) {
         chart.removeAnnotation('gender-anno');
         chart.removeAnnotation('parent-anno');
         chart.removeAnnotation('e-p-anno');
-        setTimeout(function(){chart.addAnnotation(annotation4)},2000),
+        setTimeout(function(){chart.addAnnotation(annotation4)},500),
         $('.highcharts-grid-line:nth-child(5)').css('stroke', 'black');
         $('.chart-title').text('Change in labor force participation since February');
+        $('.chart-source').text('Federal Reserve Bank of St. Louis');
         chart.update({
             chart: {
                 type: 'line'
@@ -207,7 +260,7 @@ var ts = new TwoStep({
   ],
   offset: {
       up: '-10%',
-      down: '70%'
+      down: '100%'
   }
 });
 

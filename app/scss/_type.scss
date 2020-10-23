@@ -44,7 +44,6 @@ $font-stack: 'Avenir', 'Avenir Next', 'Arial', sans-serif;
     text-transform: uppercase;
     color: $slate-secondary-5;
     letter-spacing: 1px;
-    width: 65%;
     @include sm-md-xl {
         width: 80%;
         font-size: 10px;

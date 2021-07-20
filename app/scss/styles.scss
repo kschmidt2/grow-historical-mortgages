@@ -26,22 +26,28 @@ $breakpoint-lg: 717px;
   display: none;
 }
 
-.chart-area-womens-recession-intro {
+.chart-area {
   @import "type";
   @import "highcharts";
 
   box-sizing: border-box;
   font-family: $font-stack;
   margin-bottom: 130vh;
-  margin-top: -100px;
-  max-width: 1000px;
+  // margin-top: -100px;
+  max-width: 630px;
   @include sm-md-xl(){
     width: 85vw;
   }
-
-  .highcharts-plot-background {
-    fill: none !important;
+  p {
+    &:first-child {
+      margin-block-start: 0px;
+    }
+    &:last-child {
+      margin-block-end: 0px;
+    }
   }
+
+
 
   & a {
     border-bottom: 1px solid $green-primary;
@@ -77,9 +83,10 @@ $breakpoint-lg: 717px;
 
   }
   .hidden-item {
-    margin-bottom: -80vh;
     background: none !important;
     border: none !important;
+    height: 80vh;
+    margin-bottom: -80vh !important;
   }
   .narrative-item {
       width: 400px;
@@ -89,43 +96,131 @@ $breakpoint-lg: 717px;
       color: #ccc;
       transition: color 200ms;
       padding: 20px;
+      background:rgba(255,255,255,1);
+        border: 1px solid #ccc;
       @include x-small() {
         width: 300px;
-        padding: 10px;
+        // padding: 0;
+      }
+      @include sm-md-xl(){
+        background:rgba(255,255,255,1);
+        border: 1px solid #ccc;
       }
       &:first-child {
-        margin-top:100vh;
+        margin-top:80vh;
       }
   }
   .narrative-item.active {
-      background:rgba(255,255,255,1);
-      border: 1px solid $slate-secondary-4;
       color: black;
+      background:rgba(255,255,255,1);
+        border: 1px solid $slate-secondary-4;
+      @include sm-md-xl(){
+        background:rgba(255,255,255,1);
+        border: 1px solid $slate-secondary-4;
+      }
   }
   .sticky-outer {
       position: absolute;
       height: calc(100% + 200vh);
       width: 100%;
-      top: -80vh;
+      top: -60vh;
       left: 0;
       z-index: -1;
-      background-color: white;
+      @include sm-md-xl(){
+        // z-index: -1;
+      }
+  }
+
+  .chart-sticky {
+    background-color: white;
+    // border-top: 1px solid $slate-secondary-3;
+    padding: 20px 20px 0;
+    height: 100vh;
+    @include sm-md-xl(){
+      height: 45vh;
+      border: none;
+    }
+  }
+
+  .flex-container {
+    display: flex;
+  }
+
+  .jacob, .lisa {
+    flex-grow: 1;
+    flex-basis: 0;
+    font-size: 16px;
+    & p {
+      margin-block-start: 0px;
+      margin-block-end: 0px;
+    }
+    & #jacobs-money, & #lisas-money {
+      color: $green-primary;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+  }
+
+  .lisa {
+    text-align: right;
+  }
+
+  .chart-title {
+    height: 22px;
+  }
+
+  .money-info {
+    display: none;
+    margin-bottom: -104px;
   }
 
   .chart {
       width: 100%;
-      height: 400px;
+      height: 50px;
       box-sizing: border-box;
       text-align: center;
       font-size: 30px;
-      @include sm-md-xl(){
-        height: 80vh;
-        max-height: 550px;
-      }
+      // background-color: $slate-secondary-3;
   }
 
   .two-step-sticky-wrapper {
-    top: 10vh !important;
+    top: 5vh !important;
+    background-color: white;
+  }
+
+  .jacob-illo {
+    width: 75%;
+    margin: 120px 0 0 10%;
+  }
+
+  .lisa-illo {
+    width: 70%;
+    margin: 120px 0 0 30%;
+    display: none;
+  }
+
+  .highcharts-series {
+    & rect:last-child {
+      fill: $green-primary;
+    }
+  }
+
+  .jacob {
+    .highcharts-yaxis-labels {
+      // use this to change the axis label
+      & span:first-child {
+        transform: translate(16px,0) !important;
+      }
+    }
+  }
+
+  .lisa {
+    .highcharts-yaxis-labels {
+      // use this to change the axis label
+      & span:last-child {
+        transform: translate(22px,0) !important;
+      }
+    }
   }
 
   #gradient-0 stop {
@@ -136,9 +231,6 @@ $breakpoint-lg: 717px;
   }
   #gradient-0 stop[offset="1"] {
     stop-opacity: 0;
-  }
-  .highcharts-plot-background {
-    fill: url(#gradient-1);
   }
   .highcharts-color-0 .highcharts-area {
     fill-opacity: 1;
@@ -187,37 +279,7 @@ $breakpoint-lg: 717px;
     }
   }
 
-  .highcharts-annotation {
-    animation: fadeIn ease 1s;
--webkit-animation: fadeIn ease 1s;
--moz-animation: fadeIn ease 1s;
--o-animation: fadeIn ease 1s;
--ms-animation: fadeIn ease 1s;
-  }
-  @keyframes fadeIn {
-    0% {opacity:0;}
-    100% {opacity:1;}
-    }
-    
-    @-moz-keyframes fadeIn {
-    0% {opacity:0;}
-    100% {opacity:1;}
-    }
-    
-    @-webkit-keyframes fadeIn {
-    0% {opacity:0;}
-    100% {opacity:1;}
-    }
-    
-    @-o-keyframes fadeIn {
-    0% {opacity:0;}
-    100% {opacity:1;}
-    }
-    
-    @-ms-keyframes fadeIn {
-    0% {opacity:0;}
-    100% {opacity:1;}
-    }
+
   
 }
 

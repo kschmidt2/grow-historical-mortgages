@@ -35,9 +35,13 @@
   .highcharts-background {
     fill: none;
   }
-  
-  .highcharts-plot-border, .highcharts-plot-background {
+
+  .highcharts-plot-border {
     fill: none;
+  }
+  
+  .highcharts-plot-background {
+    fill: $slate-secondary-2;
   }
   
   .highcharts-label-box {
@@ -82,26 +86,20 @@
   
   .highcharts-yaxis-labels {
     fill: $slate-secondary-5;
-    // use this to change the axis label
-    & span:last-child {
-      transform: translate(10px,0) !important;
-      &:after {
-        content: "%";
-    }
-    }
   }
   
   .highcharts-grid-line {
     fill: none;
-    stroke: $slate-secondary-3;
+    stroke: white;
+    stroke-width: 1px;
   }
   
   .highcharts-xaxis-grid .highcharts-grid-line {
-    stroke-width: 0px;
+    stroke-width: 1px;
   }
   
   .highcharts-tick {
-    stroke: $slate-secondary-6;
+    stroke: white;
   }
   
   .highcharts-yaxis .highcharts-tick {
@@ -205,8 +203,8 @@
   /* Series options */
   /* Default colors */
   .highcharts-color-0 {
-    fill: $slate-secondary-4;
-    stroke: $slate-secondary-4;
+    fill: $green-secondary-2;
+    stroke: $green-secondary-2;
   }
   
   .highcharts-color-1 {
@@ -467,13 +465,13 @@
   
   /* Plot bands and polar pane backgrounds */
   .highcharts-plot-band, .highcharts-pane {
-    fill: $slate-secondary-2;
+    fill: $green-secondary-2;
     fill-opacity: 1;
   }
 
   .highcharts-plot-band-label {
     text-transform: uppercase;
-    fill: $slate-secondary-5;
+    fill: $green-secondary-5;
   }
   
   // .highcharts-plot-line {

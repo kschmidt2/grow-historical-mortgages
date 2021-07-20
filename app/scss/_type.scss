@@ -18,13 +18,11 @@ $font-stack: 'Avenir', 'Avenir Next', 'Arial', sans-serif;
 .chart-title, .chart-title-social {
     font-weight: 600;
     text-transform: uppercase;
-    font-size: 14px;
+    font-size: 16px;
     // bottom margin should be 30px if there is no legend
     margin-bottom: 10px;
-    color: $slate-secondary-4;
-    @include x-small {
-        max-width: 225px;
-    }
+    color: $green-primary;
+    text-align: center;
 }
 
 .chart-note {
@@ -76,7 +74,8 @@ $font-stack: 'Avenir', 'Avenir Next', 'Arial', sans-serif;
 .highcharts-annotation-label {
     font-size: 14px;
     line-height: 18px;
-    fill: $slate-secondary-5;
+    fill: $green-secondary-5;
+    font-weight: 500;
     & span {
         background-color: white;
         padding: 0 5px;

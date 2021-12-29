@@ -170,7 +170,7 @@ function drawHighcharts() {
             text: null
         },
         data: {
-            csvURL: 'https://fm.cnbc.com/applications/cnbc.com/resources/editorialfiles/2021/12/29/median-home-price.csv'
+            csvURL: 'https://raw.githubusercontent.com/kschmidt2/grow-historical-mortgages/master/data/median-home-price.csv'
         },
         annotations: [{
         }],
@@ -221,15 +221,15 @@ function drawHighcharts() {
                 }
             },
             tickLength: 5,
-            plotBands: [{ // mark the weekend
-                from: Date.UTC(2020, 1, 1),
-                to: Date.UTC(2020, 9, 30),
-                label: {
-                    text: 'Pandemic',
-                    textAlign: 'center'
-                }
-            }],
-            min: Date.UTC(2000, 0, 1)
+            // plotBands: [{ // mark the weekend
+            //     from: Date.UTC(2020, 1, 1),
+            //     to: Date.UTC(2020, 9, 30),
+            //     label: {
+            //         text: 'Pandemic',
+            //         textAlign: 'center'
+            //     }
+            // }],
+            // min: Date.UTC(2000, 0, 1)
             // edits xAxis ticks
             // dateTimeLabelFormats: {
             //     week: '%b. %e',
@@ -242,8 +242,8 @@ function drawHighcharts() {
                 useHTML: true,
                 overflow: 'allow'
             },
-            min: 60,
-            max: 85,
+            // min: 60,
+            // max: 85,
             tickAmount: 6,
             // width: 0,
             tickLength: 25,

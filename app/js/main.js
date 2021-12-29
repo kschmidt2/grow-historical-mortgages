@@ -156,7 +156,7 @@ Highcharts.setOptions({
 function drawHighcharts() {
     chart = Highcharts.chart('chart-container', {
         chart: {
-            type: 'line',
+            type: 'area',
             styledMode: true,
             spacingBottom: 25,
             spacingRight: 25,

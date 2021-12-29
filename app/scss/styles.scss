@@ -129,7 +129,7 @@ $breakpoint-lg: 717px;
   }
 
   #gradient-0 stop {
-    stop-color: $slate-secondary-3;
+    stop-color: $teal;
   }
   #gradient-0 stop[offset="0"] {
     stop-opacity: 0.60;
@@ -146,7 +146,7 @@ $breakpoint-lg: 717px;
   }
 
   .highcharts-annotation-shapes {
-    fill: $purple-secondary-3;
+    fill: $teal;
     fill-opacity: 1;
     stroke: white;
     & path {
@@ -182,7 +182,7 @@ $breakpoint-lg: 717px;
   }
 
   .highcharts-grid-line {
-    &:first-child, &:last-child {
+    &:first-child {
       stroke-width: 0;
     }
   }

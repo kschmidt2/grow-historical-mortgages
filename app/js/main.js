@@ -195,7 +195,9 @@ function drawHighcharts() {
         },
         data: {
             csvURL: 'https://raw.githubusercontent.com/kschmidt2/grow-historical-mortgages/master/data/median-home-price.csv',
-            endRow: 1
+            endRow: 1,
+            endColumn: 1,
+            startColumn: 0
         },
         annotations: [{
         }],

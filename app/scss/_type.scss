@@ -18,11 +18,10 @@ $font-stack: 'Avenir', 'Avenir Next', 'Arial', sans-serif;
 .chart-title, .chart-title-social {
     font-weight: 600;
     text-transform: uppercase;
-    font-size: 16px;
+    font-size: 14px;
     // bottom margin should be 30px if there is no legend
     margin-bottom: 10px;
-    color: $green-primary;
-    text-align: center;
+    color: $slate-secondary-4;
 }
 
 .chart-note {

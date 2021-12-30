@@ -135,7 +135,7 @@ $breakpoint-lg: 717px;
     stop-opacity: 0.60;
   }
   #gradient-0 stop[offset="1"] {
-    stop-opacity: 0;
+    stop-opacity: 0.40;
   }
   .highcharts-plot-background {
     fill: url(#gradient-1);
@@ -183,7 +183,7 @@ $breakpoint-lg: 717px;
 
   .highcharts-grid-line {
     &:first-child {
-      stroke-width: 0;
+      stroke: $slate-secondary-5;
     }
   }
 
@@ -219,4 +219,8 @@ $breakpoint-lg: 717px;
     100% {opacity:1;}
     }
   
+}
+
+.highcharts-plot-bands-0, .highcharts-plot-band-label {
+  opacity: 0;
 }

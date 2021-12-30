@@ -63,11 +63,11 @@
 
 /* Axes */
 .highcharts-axis-line {
-  fill: none;
+  fill: black;
 }
 
 .highcharts-yaxis .highcharts-axis-line {
-  stroke-width: 0;
+  stroke-width: 1;
 }
 
 .highcharts-axis-title {
@@ -473,7 +473,9 @@ circle.highcharts-legend-nav-active, circle.highcharts-legend-nav-inactive {
 
 .highcharts-plot-band-label {
   text-transform: uppercase;
-  fill: $slate-secondary-5;
+  color: $teal;
+  font-size: 28px;
+  font-weight: 600;
 }
 
 // .highcharts-plot-line {
@@ -868,5 +870,5 @@ circle.highcharts-legend-nav-active, circle.highcharts-legend-nav-inactive {
 }
 
 // .highcharts-annotation-label text {
-//   fill: #e6e6e6;
+//   color: $teal;
 // }

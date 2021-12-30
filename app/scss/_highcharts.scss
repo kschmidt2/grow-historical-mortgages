@@ -476,6 +476,10 @@ circle.highcharts-legend-nav-active, circle.highcharts-legend-nav-inactive {
   color: $teal;
   font-size: 28px;
   font-weight: 600;
+  @include sm-md-xl() {
+    font-size: 36px;
+    padding-left: 25px;
+  }
 }
 
 // .highcharts-plot-line {

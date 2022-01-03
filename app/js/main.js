@@ -189,7 +189,6 @@ function drawHighcharts() {
         chart: {
             type: 'area',
             styledMode: true,
-            spacingBottom: 25,
             spacingRight: 25,
             spacingLeft: 10,
             spacingTop: 20,
@@ -202,9 +201,10 @@ function drawHighcharts() {
             text: null
         },
         data: {
+            dateFormat: 'mm/dd/YY',
             csvURL: 'https://raw.githubusercontent.com/kschmidt2/grow-historical-mortgages/master/data/median-home-price.csv',
             endColumn: 1,
-            startColumn: 0
+            startColumn: 0,
         },
         annotations: [{
         }],

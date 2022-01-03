@@ -62,9 +62,6 @@ $font-stack: 'Avenir', 'Avenir Next', 'Arial', sans-serif;
         content: "Source: ";
     }
     float: left;
-    @include sm-md-xl {
-        float: none;
-        } 
 }
 
 .strong {
